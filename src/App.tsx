@@ -2,10 +2,56 @@
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 import './App.css'
+import { useState } from "react";
+
 
 function App() {
+  const [unlocked, setUnlocked] = useState(false);
+  const [input, setInput] = useState("");
+  const [error, setError] = useState("");
+
+  // массив возможных вариантов
+  const passwords = ["Асемa", "асема", "Asema", "asema", "Сасема", "сасема" , "Срасема" , "срасема"];
+
+  const handleUnlock = () => {
+    if (
+      passwords.some(
+        (word) => word.toLowerCase() === input.trim().toLowerCase()
+      )
+    ) {
+      setUnlocked(true);
+      setError("");
+    } else {
+      setError("Нет, не тебе.");
+    }
+  };
+
   return (
-    <div className="min-h-screen min-w-screen flex items-center justify-center bg-gradient-to-br from-pink-300 via-pink-400 to-pink-600">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-pink-200 to-pink-400">
+      {!unlocked ? (
+        <div className="flex flex-col items-center gap-4">
+          <h1 className="text-2xl font-bold text-white drop-shadow">
+            Имя девушки, которой будут посвящены следующие слова?
+          </h1>
+          <input
+            type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={(e) => e.key === "Enter" && handleUnlock()}
+            className="px-4 py-2 rounded-lg border border-white bg-transparent text-white placeholder-pink-100 focus:outline-none focus:ring-2 focus:ring-white text-center"
+            placeholder="Напиши её имя..."
+          />
+          <button
+            onClick={handleUnlock}
+            className="rounded-lg px-6 py-2 bg-white text-pink-600 font-semibold shadow hover:scale-105 transition"
+          >
+            Продолжить
+          </button>
+          {error && <p className="text-white font-medium">{error}</p>}
+        </div>
+      ) : (
+        <div className="flex flex-col items-center gap-6">
+<div className="min-h-screen min-w-screen flex items-center justify-center bg-gradient-to-br from-pink-300 via-pink-400 to-pink-600">
       <div className="flex flex-col items-center gap-4">
         <h1 className="text-4xl font-bold text-white drop-shadow-lg">
           Text
@@ -112,7 +158,12 @@ function App() {
       </button>
 
     </div>
-  )
+        </div>
+      )}
+    </div>
+  );
 }
+
+
 
 export default App
