@@ -27,18 +27,18 @@ const nouns = [
   "curiosity", "intuition", "humor", "wisdom", "cunning", "brilliance", "perception", "judgment", "cleverness", "talent",
 
   // Her Heart & Emotional Qualities
-  "love", "compassion", "empathy", "tenderness", "care", "affection", "devotion", "loyalty", "faith", "trust",
+  "love", "compassion", "empathy", "tenderness", "care", "affection", "devotion", "loyalty", "trust",
   "honesty", "purity", "innocence", "gentleness", "sensitivity", "generosity", "selflessness", "warmth", "comfort", "solace",
 
   // Her Strength & Power
-  "power", "will", "determination", "ambition", "drive", "focus", "fortitude", "fearlessness", "confidence", "independence",
-  "resolve", "tenacity", "perseverance", "might", "influence", "authority", "command", "leadership", "vigor", "vitality",
+  "power", "will", "determination", "ambition", "drive", "focus", "confidence", "independence",
+  "resolve", "tenacity", "perseverance", "might", "influence"
 
 ];
 
 const myVerbs = [
   "love", "admire", "cherish", "adore", "crave", "need", "treasure", "miss", "dream of",
-  "worship", "value", "embrace", "seek", "yearn for", "respect", "honor"
+  "worship", "value", "embrace", "yearn for", "respect", "honor"
 ];
 
 const herVerbs = [
